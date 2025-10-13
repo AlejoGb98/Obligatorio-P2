@@ -1,0 +1,94 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Classes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Classes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Classes.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Classes/1.0.0": {
+      "type": "project",
+      "path": "../Classes/Classes.csproj",
+      "msbuildProject": "../Classes/Classes.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Classes >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/alejogalland/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/Dominio.csproj",
+      "projectName": "Dominio",
+      "projectPath": "/Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/Dominio.csproj",
+      "packagesPath": "/Users/alejogalland/.nuget/packages/",
+      "outputPath": "/Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/alejogalland/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Classes/Classes.csproj": {
+              "projectPath": "/Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Classes/Classes.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/Users/alejogalland/.dotnet/sdk/8.0.413/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
