@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices.JavaScript;
+
 namespace Classes;
 
 internal class PagoUnico : Pago
@@ -13,6 +15,8 @@ internal class PagoUnico : Pago
         _nroRecibo = nroRecibo;
     }
 
+    public DateTime FechaPago => _fechaPago;
+
     public void ValidarPago()
     {
         ValidarFecha();
@@ -22,22 +26,30 @@ internal class PagoUnico : Pago
     {
         if (_fechaPago > DateTime.Now) throw new Exception("La fecha no puede ser mayor a hoy.");
     }
-
+    
     public override string ToString()
     {
         return $"{base.ToString()}Fecha de Pago: {_fechaPago.ToString("dd/MM/yyyy")} \nNumero de Recibo: {_nroRecibo}";
     }
 
-    //VA EN EL METODO ABSTRACTO
-    /*private decimal CalcularMontoAPagar(decimal montoPago)
+    public override decimal CalcularPromocion()
     {
-        decimal monto = montoPago;
-        decimal montoFinal = montoPago * 0.9m;
+        decimal montoConPromocion = MontoPago;
+
         if (MetodoPago == MetodoPago.Efectivo)
         {
-            montoFinal = monto * 0.8m;
+            montoConPromocion *= .8m;
+        }
+        else
+        {
+            montoConPromocion *= .9m;
         }
 
-        return montoFinal;
-    }*/
+        return montoConPromocion;
+    }
+
+    public override decimal CalcularMontoPago()
+    {
+        return base.CalcularMontoPago();
+    }
 }

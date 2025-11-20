@@ -81,8 +81,6 @@ class Program
         int equipo = Utils.LeerEquipo(system.Equipos);
         DateTime fechaIngreso = Utils.PedirFecha("Fecha de Ingreso");
         
-        if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(contrasena)) throw new Exception("Todos los campos son obligatorios.");
-
         try
         {
             system.AgregarUsuario(nombre, apellido, contrasena, equipo, fechaIngreso);
@@ -99,19 +97,26 @@ class Program
         Console.Write("Usuario: ");
         string usuario = Console.ReadLine();
 
-        List<Pago> pagos = system.ObtenerPagosPorPersona(usuario);
-
-        if (pagos.Count > 0)
+        try
         {
-            foreach (Pago pago in pagos)
+            List<Pago> pagos = system.ObtenerPagosPorPersona(usuario);
+
+            if (pagos.Count > 0)
             {
-                Console.Write("------------------------------\n");
-                Console.WriteLine(pago);
+                foreach (Pago pago in pagos)
+                {
+                    Console.Write("------------------------------\n");
+                    Console.WriteLine(pago);
+                }
+            }
+            else
+            {
+                Console.WriteLine("El usuario no tiene pagos registrados.");
             }
         }
-        else
+        catch (Exception e)
         {
-            Console.WriteLine("El usuario no tiene pagos registrados.");
+            Console.WriteLine(e.Message);
         }
         
     }

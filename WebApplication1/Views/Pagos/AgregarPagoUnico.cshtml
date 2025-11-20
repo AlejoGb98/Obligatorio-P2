@@ -1,0 +1,59 @@
+@using Classes
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>RIBUK - Agregar Pago</title>
+</head>
+<body>
+<div>
+    <h2>Agregar Nuevo Pago Unico</h2>
+    <form method="post" class="d-grid gap-3 w-75 justify-content-center">
+        
+        <div class="d-grid gap-1">
+            <label>Seleccionar Metodo de Pago</label>
+            <select name="metodoPago" required>
+                <option>-- Seleccionar --</option>
+                <option value="EFECTIVO">Efectivo</option>
+                <option value="DEBITO">Debito</option>
+                <option value="CREDITO">Credito</option>
+            </select>
+        </div>
+        
+        <div class="d-grid gap-1">
+            <label>Seleccionar Tipo de Gasto</label>
+            <select name="tipoGasto" required>
+                <option>-- Seleccionar --</option>
+                @foreach (TipoGasto tipo in ViewBag.TiposDeGasto)
+                {
+                    <option value=@tipo.Nombre>@tipo.Nombre</option>
+                }
+            </select>
+        </div>
+        
+        <div class="d-grid gap-1">
+            <label>Descripción</label>
+            <input type="text" name="descr" required/>
+        </div>
+        
+        <div class="d-grid gap-1">
+            <label>Monto Pago</label>
+            <input type="text" name="montoPago" required/>
+        </div>
+        
+        <div class="d-grid gap-1">
+            <label>Fecha de Pago</label>
+            <input type="date" name="fecha" required/>
+        </div>
+        
+        <div class="d-grid gap-1">
+            <label>Numero de Recibo</label>
+            <input type="text" name="nroRecibo" required/>
+        </div>
+        
+        <input class="btn-primary" type="submit" value="Agregar Pago"/>
+    </form>
+</div>
+</body>
+</html>

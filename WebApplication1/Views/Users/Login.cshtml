@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ribuk - Login</title>
+</head>
+
+<body>  
+<div>
+    @if (ViewBag.Mensaje != null)
+    {
+    }
+        <p>@ViewBag.Mensaje</p>
+    
+    <form method="post" class="container-md">
+        <div class="mb-3">
+            <div>
+                <label for="user" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="user" name="user">
+            </div>
+            <div>
+                <label for="pass" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="pass" name="pass">
+            </div>
+        </div>
+        <input type="submit" value="Iniciar Sesion">
+    </form>
+</div>
+</body>
+</html>

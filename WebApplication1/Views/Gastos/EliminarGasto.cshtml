@@ -1,0 +1,36 @@
+@using Classes
+@{ int i = 0;}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<h2>Eliminar un Tipo de Gasto</h2>
+
+@if(ViewBag.Error != null) {<p>@ViewBag.Error</p>}
+
+@if (ViewBag.Gastos != null)
+{
+    <form method="post" class="d-grid gap-3 w-75 justify-content-center">
+        <div class="d-grid gap-1">
+            <label>Seleccionar Tipo de Gasto</label>
+            <select name="indexTipoGasto" required>
+                <option>-- Seleccionar --</option>
+                @foreach (TipoGasto tg in ViewBag.Gastos)
+                {
+                    <option value=@i>@tg.Nombre</option>
+                    i++;
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn-danger">Eliminar</button>
+    </form>
+}
+
+
+</body>
+</html>

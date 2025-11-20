@@ -1,0 +1,21 @@
+@using Classes;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+    <h2>Bienvenido @ViewBag.Usuario.Nombre @ViewBag.Usuario.Apellido</h2>
+    
+    <p>Tu rol actual es @ViewBag.Usuario.Rol</p>
+    
+    <p>Email: @ViewBag.Usuario.Email</p>
+    <p>Fecha Ingreso: @ViewBag.Usuario.FechaIngreso</p>
+    <p>Equipo: @ViewBag.Usuario.Equipo.NombreEquipo</p>
+    <p>Gasto este mes: $@ViewBag.Gasto</p>
+</div>
+</body>
+</html>

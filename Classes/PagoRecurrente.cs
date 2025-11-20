@@ -16,6 +16,12 @@ internal class PagoRecurrente : Pago
         _limite = limite;
     }
 
+    public DateTime FechaDesde => _fechaDesde;
+
+    public DateTime? FechaHasta => _fechaHasta;
+
+    public bool Limite => _limite;
+
     public void ValidarPago()
     {
         ValidarFechasPago();
@@ -38,6 +44,12 @@ internal class PagoRecurrente : Pago
         return cuotas;
     }
 
+    public int CalcularCuotas()
+    {
+        return (_fechaHasta.Value.Year - _fechaDesde.Year) * 12 + (_fechaHasta.Value.Month - _fechaDesde.Month + 1);
+        
+    }
+
     public override string ToString()
     {
         string aux = $"Fecha Final: {_fechaHasta?.ToString("dd/MM/yyyy")} \n";
@@ -58,19 +70,29 @@ internal class PagoRecurrente : Pago
                (_fechaHasta != null ? aux : "");
     }
 
-    /*private decimal CalcularMontoAPagar(decimal montoPago)
+    public override decimal CalcularPromocion()
     {
-        if (_limite)
+        decimal montoPago = MontoPago;
+        if (!_limite)
         {
-            if (_cuotasPendientes >= 10)
+            montoPago *= 1.03m;
+        }
+        else if(_limite)
+        {
+            int cuotas = CalcularCuotas();
+            if (cuotas >= 10)
             {
-                return montoPago * 1.1m;
-            } else if (_cuotasPendientes >= 6)
+                montoPago *= 1.1m / cuotas;
+            } else if (cuotas >= 6 && cuotas <= 9)
             {
-                return montoPago * 1.05m;
+                montoPago *= 1.05m / cuotas;
             }
         }
-        return montoPago * 1.03m;
+        return montoPago;
+    }
 
-    }*/
+    public override decimal CalcularMontoPago()
+    {
+        return base.CalcularMontoPago() / CalcularCuotas();
+    }
 }

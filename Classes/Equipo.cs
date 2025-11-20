@@ -11,6 +11,8 @@ public class Equipo
         get { return _id; }
     }
 
+    public string NombreEquipo => _nombreEquipo;
+
     public Equipo(string nombreEquipo)
     {
         _id = ++_lastId;

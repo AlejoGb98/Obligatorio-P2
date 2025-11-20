@@ -1,7 +1,7 @@
 namespace Classes;
 
 public enum MetodoPago {Credito, Debito, Efectivo}
-public abstract class Pago
+public abstract class Pago : IComparable<Pago>
 {
     private int _id;
     private static int _ultimoId = 0;
@@ -12,15 +12,11 @@ public abstract class Pago
     private decimal _montoPago;
     
 
-    public Usuario Usuario
-    {
-        get { return _usuario; }
-    }
-
-    public MetodoPago MetodoPago
-    {
-        get { return _metodoPago; }
-    }
+    public Usuario Usuario => _usuario;
+    public MetodoPago MetodoPago => _metodoPago; 
+    public string Descripcion => _descripcion;
+    public decimal MontoPago => _montoPago;
+    public TipoGasto TipoGasto => _tipoGasto;
 
     public Pago(MetodoPago metodoPago, TipoGasto tipoGasto, Usuario usuario, string descripcion, decimal montoPago)
     {
@@ -32,11 +28,23 @@ public abstract class Pago
         _montoPago = montoPago;
     }
 
+    public int CompareTo(Pago otroPago)
+    {
+        return -_montoPago.CompareTo(otroPago._montoPago) ;
+    }
+
     public override bool Equals(object? obj)
     {
         return obj is Pago pago && _usuario == pago._usuario;
     }
 
+    public abstract decimal CalcularPromocion();
+
+    public virtual decimal CalcularMontoPago()
+    {
+        return _montoPago;
+    }
+        
     public override string ToString()
     {
         return $"Metodo de Pago: {_metodoPago} \nTipo de Gasto: {_tipoGasto.Nombre} \nDescripcion: {_descripcion} \nPago Total: ${_montoPago} \n";

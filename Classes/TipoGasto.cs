@@ -5,10 +5,7 @@ public class TipoGasto
     private string _nombre;
     private string _descripcion;
 
-    public string Nombre
-    {
-        get { return _nombre; }
-    }
+    public string Nombre => _nombre;
 
     public TipoGasto(string nombre, string descripcion)
     {

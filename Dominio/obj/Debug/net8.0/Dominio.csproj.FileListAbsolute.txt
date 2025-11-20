@@ -10,6 +10,7 @@
 /Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfoInputs.cache
 /Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfo.cs
 /Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/obj/Debug/net8.0/Dominio.csproj.CoreCompileInputs.cache
+/Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/obj/Debug/net8.0/Dominio.sourcelink.json
 /Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/obj/Debug/net8.0/Dominio.csproj.Up2Date
 /Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/obj/Debug/net8.0/Dominio.dll
 /Users/alejogalland/Desktop/ORT/2do Semestre/Programacion 2/Practicos/Obligatorio/Obligatorio-P2/Dominio/obj/Debug/net8.0/refint/Dominio.dll

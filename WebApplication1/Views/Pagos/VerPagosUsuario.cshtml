@@ -1,0 +1,34 @@
+@using Classes;
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+    <table class="table">
+        <thead>
+            <th>Tipo de Gasto</th>
+            <th>Metodo de Pago</th>
+            <th>Descripcion</th>
+            <th>Monto Pago</th>
+        </thead>
+        
+        <tbody>
+            @foreach (Pago pago in ViewBag.Pagos)
+            {
+                <tr>
+                    <td>@pago.TipoGasto.Nombre</td>
+                    <td>@pago.MetodoPago</td>
+                    <td>@pago.Descripcion</td>
+                    <td>$ @pago.MontoPago</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

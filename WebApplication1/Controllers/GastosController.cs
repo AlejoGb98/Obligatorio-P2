@@ -1,0 +1,54 @@
+using Classes;
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplication1.Controllers;
+
+public class GastosController : Controller
+{
+    Sistema system = Sistema.Instancia;
+    
+    // GET
+    public IActionResult Index()
+    {
+        if (HttpContext.Session.GetString("Usuario") == null || HttpContext.Session.GetString("Usuario") == "Empleado") return Redirect("/Users/Login");
+        return View();
+    }
+
+    public IActionResult AgregarGasto()
+    {
+        if (HttpContext.Session.GetString("Usuario") == null || HttpContext.Session.GetString("Usuario") == "Empleado") return Redirect("/Users/Login");
+        return View();
+    }
+
+    [HttpPost]
+
+    public IActionResult AgregarGasto(string nombre, string descripcion)
+    {
+        system.AgregarTipoGasto(nombre, descripcion);
+        return View();
+    }
+
+    public IActionResult EliminarGasto()
+    {
+        if (HttpContext.Session.GetString("Usuario") == null || HttpContext.Session.GetString("Usuario") == "Empleado") return Redirect("/Users/Login");
+        ViewBag.Gastos = system.TiposDeGastos;
+        return View();
+    }
+
+    [HttpPost]
+
+    public IActionResult EliminarGasto(int indexTipoGasto)
+    {
+        try
+        {
+            system.EliminarTipoGasto(indexTipoGasto);
+            return Redirect("/Gastos/EliminarGasto");
+        }
+        catch (Exception e)
+        {
+            ViewBag.Error = e.Message;
+        }
+        ViewBag.Gastos = system.TiposDeGastos;
+        return View();
+    }
+}

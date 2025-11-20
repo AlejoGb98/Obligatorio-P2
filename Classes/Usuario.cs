@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Security.AccessControl;
 
 namespace Classes;
 
@@ -10,8 +11,9 @@ public class Usuario
     private string _email;
     private Equipo _equipo;
     private DateTime _fechaIngreso;
+    private string _rol;
 
-    public Usuario(string nombre, string apellido, string contrasena, string email, Equipo equipo, DateTime fechaIngreso )
+    public Usuario(string nombre, string apellido, string contrasena, string email, Equipo equipo, DateTime fechaIngreso, string rol )
     {
         _nombre = nombre;
         _apellido = apellido;
@@ -19,10 +21,18 @@ public class Usuario
         _email = email;
         _equipo = equipo;
         _fechaIngreso = fechaIngreso;
+        _rol = rol;
     }
 
     public string Email { get => _email; }
     public string Nombre { get => _nombre; }
+    public string Apellido => _apellido;
+    public string Contrasena { get => _contrasena; }
+    public DateTime FechaIngreso => _fechaIngreso;
+
+    public Equipo Equipo => _equipo;
+
+    public string Rol { get => _rol; }
 
     public override string ToString()
     {
@@ -36,14 +46,20 @@ public class Usuario
 
     public void Validar()
     {
-        ValidarUsuario();
+        ValidarNombre();
+        ValidarApellido();
         ValidarContrasena();
         ValidarFechaIngreso();
     }
 
-    private void ValidarUsuario()
+    private void ValidarNombre()
     {
         if (_nombre.Length == 0) throw new Exception("El nombre no puede ser vacio.");
+    }
+    
+    private void ValidarApellido()
+    {
+        if (_apellido.Length == 0) throw new Exception("El apellido no puede ser vacio.");
     }
 
     private void ValidarContrasena()
@@ -58,7 +74,7 @@ public class Usuario
 
     public bool MailEsIgual(string email)
     {
-        if (email == _email.Substring(0, 6)) return true;
+        if (email == _email) return true;
         return false;
     }
 

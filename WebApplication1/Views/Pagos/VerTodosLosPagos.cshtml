@@ -1,0 +1,62 @@
+@using System.Globalization
+@using Classes;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+    <h2>Pagos de Miembros del Equipo</h2>
+    
+    <div class="my-4">
+        <p>Ingresar Mes y Año para ver pagos correspondientes</p>
+        
+        <form method="post" class="d-flex gap-3">
+            <select name="mesPago">
+                @for (int i = 1; i <= 12; i++)
+                {
+                    <option value=@i>@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i)</option>
+                }
+            </select>
+            <select name="anoPago">
+                @for (int i = DateTime.Today.Year; i >= 2010; i--)
+                {
+                    <option value=@i>@i</option>
+                }
+            </select>
+            
+            <button type="submit" class="btn-primary rounded-2">Ingresar</button>
+        </form>
+    </div>
+    
+    <table class="table">
+        <thead>
+            <th>Usuario</th>
+            <th>Equipo</th>
+            <th>Tipo de Gasto</th>
+            <th>Metodo de Pago</th>
+            <th>Descripcion</th>
+            <th>Monto Pago</th>
+            <th>Monto con %</th>
+        </thead>
+        <tbody>
+        @foreach (Pago pago in ViewBag.Pagos)
+        {
+            <tr>
+                <th>@pago.Usuario.Nombre</th>
+                <th>@pago.Usuario.Equipo.NombreEquipo</th>
+                <td>@pago.TipoGasto.Nombre</td>
+                <td>@pago.MetodoPago</td>
+                <td>@pago.Descripcion</td>
+                <td>$ @pago.CalcularMontoPago()</td>
+                <td>$ @pago.CalcularPromocion()</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
