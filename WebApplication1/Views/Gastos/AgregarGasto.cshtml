@@ -8,6 +8,16 @@
 <div>
     <h2>Agregar Tipo de Gasto</h2>
     
+    @if(TempData["MensajeAgregado"] != null)
+    {
+        <p>@TempData["MensajeAgregado"]</p>
+    }
+    
+    @if (TempData["MensajeError"] != null)
+    {
+        <p>@TempData["MensajeError"]</p>
+    }
+    
     <form method="post" class="d-grid gap-3 w-75 justify-content-center">
         <div class="d-grid gap-1">
             <label for="nombre">Nombre del Gasto</label>

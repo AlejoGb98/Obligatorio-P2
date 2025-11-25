@@ -9,7 +9,10 @@
 <body>
 <div>
     <h2>Agregar Nuevo Pago Recurrente</h2>
-    <form method="post" class="d-grid gap-3 w-75 justify-content-center">
+    
+    @if(TempData["MensajeError"] != null){<p>@TempData["MensajeError"]</p>}
+    
+    <form method="post" class="d-grid gap-3 mt-2 w-75 justify-content-center">
         
         <div class="d-grid gap-1">
             <label>Seleccionar Tipo de Gasto</label>

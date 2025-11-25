@@ -9,26 +9,39 @@
 </head>
 <body>
 <div>
-    <table class="table">
-        <thead>
+    @if (ViewBag.Pagos.Count <= 0)
+    {
+        <p>No existen pagos para mostrar.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+            <th>Tipo de Pago</th>
             <th>Tipo de Gasto</th>
+            <th>Fecha Pago</th>
             <th>Metodo de Pago</th>
             <th>Descripcion</th>
             <th>Monto Pago</th>
-        </thead>
-        
-        <tbody>
+            <th>Monto con %</th>
+            </thead>
+
+            <tbody>
             @foreach (Pago pago in ViewBag.Pagos)
             {
                 <tr>
+                    <td>@pago.TipoPago()</td>
                     <td>@pago.TipoGasto.Nombre</td>
+                    <td>@pago.FechaDePago().ToString("d")</td>
                     <td>@pago.MetodoPago</td>
                     <td>@pago.Descripcion</td>
-                    <td>$ @pago.MontoPago</td>
+                    <td>$ @pago.CalcularMontoPago().ToString("0.00")</td>
+                    <td>$ @pago.CalcularPromocion().ToString("0.00")</td>
                 </tr>
             }
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    }
 </div>
 </body>
 </html>

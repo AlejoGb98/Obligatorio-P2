@@ -58,6 +58,12 @@ public class UsersController : Controller
 
         decimal gastoMesCorriente = system.ObtenerGastoMesCorriente(email);
 
+        if (HttpContext.Session.GetString("Rol") == "Gerente")
+        {
+            List<Usuario> usuariosDelEquipo = system.ObtenerUsuariosPorEquipo(int.Parse(HttpContext.Session.GetString("Equipo")));
+            ViewBag.Equipo = usuariosDelEquipo;
+        }
+
         ViewBag.Usuario = user;
         ViewBag.Gasto = gastoMesCorriente;
         

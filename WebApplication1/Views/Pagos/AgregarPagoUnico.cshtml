@@ -9,15 +9,16 @@
 <body>
 <div>
     <h2>Agregar Nuevo Pago Unico</h2>
+    
+    @if(TempData["MensajeError"] != null) {<p>@TempData["MensajeError"]</p>}
+    
     <form method="post" class="d-grid gap-3 w-75 justify-content-center">
         
         <div class="d-grid gap-1">
             <label>Seleccionar Metodo de Pago</label>
             <select name="metodoPago" required>
-                <option>-- Seleccionar --</option>
                 <option value="EFECTIVO">Efectivo</option>
                 <option value="DEBITO">Debito</option>
-                <option value="CREDITO">Credito</option>
             </select>
         </div>
         

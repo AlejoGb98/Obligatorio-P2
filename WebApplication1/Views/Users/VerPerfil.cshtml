@@ -13,9 +13,42 @@
     <p>Tu rol actual es @ViewBag.Usuario.Rol</p>
     
     <p>Email: @ViewBag.Usuario.Email</p>
-    <p>Fecha Ingreso: @ViewBag.Usuario.FechaIngreso</p>
+    <p>Fecha Ingreso: @ViewBag.Usuario.FechaIngreso.ToString("d")</p>
     <p>Equipo: @ViewBag.Usuario.Equipo.NombreEquipo</p>
-    <p>Gasto este mes: $@ViewBag.Gasto</p>
+    <p>Gasto este mes: $@ViewBag.Gasto.ToString("00.00")</p>
+    
+    @if (ViewBag.Usuario.Rol == "Gerente")
+    {
+        <div class="mt-2">
+            <p>Informacion de tu Equipo</p>
+            
+            <table class="table">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Rol</th>
+                    <th>Email</th>
+                    <th>Fecha Ingreso</th>
+                </thead>
+                
+                <tbody>
+                    @foreach (Usuario user in ViewBag.Equipo)
+                    {
+                        if (user.Email != ViewBag.Usuario.Email)
+                        {
+                            <tr>
+                                <td>@user.Nombre</td>
+                                <td>@user.Apellido</td>
+                                <td>@user.Rol</td>
+                                <td>@user.Email</td>
+                                <td>@user.FechaIngreso.ToString("d")</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
 </div>
 </body>
 </html>

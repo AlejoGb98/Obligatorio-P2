@@ -32,31 +32,43 @@
         </form>
     </div>
     
-    <table class="table">
-        <thead>
-            <th>Usuario</th>
-            <th>Equipo</th>
-            <th>Tipo de Gasto</th>
-            <th>Metodo de Pago</th>
-            <th>Descripcion</th>
-            <th>Monto Pago</th>
-            <th>Monto con %</th>
-        </thead>
-        <tbody>
-        @foreach (Pago pago in ViewBag.Pagos)
-        {
-            <tr>
-                <th>@pago.Usuario.Nombre</th>
-                <th>@pago.Usuario.Equipo.NombreEquipo</th>
-                <td>@pago.TipoGasto.Nombre</td>
-                <td>@pago.MetodoPago</td>
-                <td>@pago.Descripcion</td>
-                <td>$ @pago.CalcularMontoPago()</td>
-                <td>$ @pago.CalcularPromocion()</td>
-            </tr>
-        }
-        </tbody>
-    </table>
+    @if(ViewBag.Pagos.Count <= 0)
+    {
+        <p>No existen pagos para mostrar.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <th>Usuario</th>
+                <th>Equipo</th>
+                <th>Tipo Pago</th>
+                <th>Fecha Pago</th>
+                <th>Tipo de Gasto</th>
+                <th>Metodo de Pago</th>
+                <th>Descripcion</th>
+                <th>Monto Pago</th>
+                <th>Monto con %</th>
+            </thead>
+            <tbody>
+            @foreach (Pago pago in ViewBag.Pagos)
+            {
+                <tr>
+                    <td>@pago.Usuario.Email</td>
+                    <td>@pago.Usuario.Equipo.NombreEquipo</td>
+                    <td>@pago.TipoPago()</td>
+                    <td>@pago.FechaDePago().ToString("d")</td>
+                    <td>@pago.TipoGasto.Nombre</td>
+                    <td>@pago.MetodoPago</td>
+                    <td>@pago.Descripcion</td>
+                    <td>$ @pago.CalcularMontoPago().ToString("0.00")</td>
+                    <td>$ @pago.CalcularPromocion().ToString("0.00")</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    
 </div>
 </body>
 </html>

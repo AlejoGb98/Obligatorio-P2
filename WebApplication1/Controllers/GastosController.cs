@@ -24,8 +24,17 @@ public class GastosController : Controller
 
     public IActionResult AgregarGasto(string nombre, string descripcion)
     {
-        system.AgregarTipoGasto(nombre, descripcion);
-        return View();
+        try
+        {
+            system.AgregarTipoGasto(nombre, descripcion);
+            TempData["MensajeAgregado"] = $"El gasto {nombre} fue agregado con exito.";
+            return Redirect("/Gastos/AgregarGasto");
+        }
+        catch (Exception e)
+        {
+            TempData["MensajeError"] = e.Message;
+            return Redirect("/Gastos/AgregarGasto");
+        }
     }
 
     public IActionResult EliminarGasto()
@@ -42,6 +51,7 @@ public class GastosController : Controller
         try
         {
             system.EliminarTipoGasto(indexTipoGasto);
+            TempData["MensajeEliminado"] = "El gasto fue eliminado.";
             return Redirect("/Gastos/EliminarGasto");
         }
         catch (Exception e)

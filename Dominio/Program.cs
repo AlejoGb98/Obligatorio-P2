@@ -79,11 +79,12 @@ class Program
         string apellido = Utils.PedirLetras("Apellido");
         string contrasena = Utils.PedirLetras("Contraseña");
         int equipo = Utils.LeerEquipo(system.Equipos);
+        string rol = "";
         DateTime fechaIngreso = Utils.PedirFecha("Fecha de Ingreso");
         
         try
         {
-            system.AgregarUsuario(nombre, apellido, contrasena, equipo, fechaIngreso);
+            system.AgregarUsuario(nombre, apellido, contrasena, equipo, fechaIngreso, rol);
             Console.WriteLine("Usuario agregado exitosamente.");
         }
         catch (Exception e)

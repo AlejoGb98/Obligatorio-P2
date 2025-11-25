@@ -19,12 +19,13 @@ internal class PagoUnico : Pago
 
     public void ValidarPago()
     {
-        ValidarFecha();
+        Validar();
     }
 
-    private void ValidarFecha()
+    private void Validar()
     {
         if (_fechaPago > DateTime.Now) throw new Exception("La fecha no puede ser mayor a hoy.");
+        
     }
     
     public override string ToString()
@@ -51,5 +52,15 @@ internal class PagoUnico : Pago
     public override decimal CalcularMontoPago()
     {
         return base.CalcularMontoPago();
+    }
+
+    public override string TipoPago()
+    {
+        return "Unico";
+    }
+
+    public override DateTime FechaDePago()
+    {
+        return _fechaPago;
     }
 }

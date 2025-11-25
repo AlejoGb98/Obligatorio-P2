@@ -29,9 +29,14 @@ internal class PagoRecurrente : Pago
 
     private void ValidarFechasPago()
     {
-        if (_fechaHasta != null && _fechaHasta < DateTime.Today)
+        /*if (_fechaHasta != null && _fechaHasta < DateTime.Today)
         {
             throw new Exception("La fecha de fin no puede ser antes de hoy.");
+        }*/
+
+        if (_fechaHasta == null && _limite)
+        {
+            throw new Exception("El pago con limite debe tener fecha de fin.");
         }
     }
 
@@ -47,7 +52,6 @@ internal class PagoRecurrente : Pago
     public int CalcularCuotas()
     {
         return (_fechaHasta.Value.Year - _fechaDesde.Year) * 12 + (_fechaHasta.Value.Month - _fechaDesde.Month + 1);
-        
     }
 
     public override string ToString()
@@ -93,6 +97,20 @@ internal class PagoRecurrente : Pago
 
     public override decimal CalcularMontoPago()
     {
-        return base.CalcularMontoPago() / CalcularCuotas();
+        if (_limite)
+        {
+            return base.CalcularMontoPago() / CalcularCuotas();
+        }
+        return base.CalcularMontoPago();
+    }
+
+    public override string TipoPago()
+    {
+        return "Recurrente";
+    }
+
+    public override DateTime FechaDePago()
+    {
+        return _fechaDesde;
     }
 }

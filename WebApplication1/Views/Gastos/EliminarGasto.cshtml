@@ -12,6 +12,7 @@
 <h2>Eliminar un Tipo de Gasto</h2>
 
 @if(ViewBag.Error != null) {<p>@ViewBag.Error</p>}
+@if(TempData["MensajeEliminado"] != null) {<p>@TempData["MensajeEliminado"]</p>}
 
 @if (ViewBag.Gastos != null)
 {

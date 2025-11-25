@@ -55,12 +55,18 @@ public class PagosController : Controller
     [HttpPost]
     public IActionResult AgregarPagoUnico(MetodoPago metodoPago, string tipoGasto, string descr, DateTime fecha, decimal montoPago, int nroRecibo)
     {
-            //HACER VALIDACIONES
             string? usuario = HttpContext.Session.GetString("Usuario");
-            
-            system.AgregarPagoUnico(metodoPago, tipoGasto, usuario, descr, fecha, montoPago, nroRecibo );
-            
-            return Redirect("/Pagos/VerPagosUsuario");
+            try
+            {
+                system.AgregarPagoUnico(metodoPago, tipoGasto, usuario, descr, fecha, montoPago, nroRecibo);
+                return Redirect("/Pagos/VerPagosUsuario");
+            }
+            catch (Exception e)
+            {
+                TempData["MensajeError"] = e.Message;
+            }
+
+            return Redirect("/Pagos/AgregarPagoUnico");
     }
     
     public IActionResult AgregarPagoRecurrente()
@@ -73,12 +79,21 @@ public class PagosController : Controller
     [HttpPost]
     public IActionResult AgregarPagoRecurrente(string tipoGasto, string descr, decimal montoPago, DateTime fechaDesde, DateTime? fechaHasta, bool limite )
     {
+        if (!limite) fechaHasta = null;
         MetodoPago metodoPago = MetodoPago.Credito;
         string? usuario = HttpContext.Session.GetString("Usuario");
-        
-        system.AgregarPagoRecurrente(metodoPago, tipoGasto, usuario, descr, montoPago, fechaDesde, fechaHasta, limite);
-        return Redirect("/Pagos/VerPagosUsuario");
-        return View();
+
+        try
+        {
+            system.AgregarPagoRecurrente(metodoPago, tipoGasto, usuario, descr, montoPago, fechaDesde, fechaHasta, limite);
+            return Redirect("/Pagos/VerPagosUsuario");
+        }
+        catch (Exception e)
+        {
+            TempData["MensajeError"] = e.Message;
+        }
+
+        return Redirect("/Pagos/AgregarPagoRecurrente");
     }
     
     

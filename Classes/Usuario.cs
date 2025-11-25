@@ -3,7 +3,7 @@ using System.Security.AccessControl;
 
 namespace Classes;
 
-public class Usuario
+public class Usuario : IComparable<Usuario>
 {
     private string _nombre;
     private string _apellido;
@@ -82,5 +82,9 @@ public class Usuario
     {
         return idEquipo == _equipo.Id;
     }
-    
+
+    public int CompareTo(Usuario? other)
+    {
+        return _email.CompareTo(other._email);
+    }
 }

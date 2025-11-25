@@ -44,7 +44,10 @@ public abstract class Pago : IComparable<Pago>
     {
         return _montoPago;
     }
-        
+
+    public abstract string TipoPago();
+
+    public abstract DateTime FechaDePago();
     public override string ToString()
     {
         return $"Metodo de Pago: {_metodoPago} \nTipo de Gasto: {_tipoGasto.Nombre} \nDescripcion: {_descripcion} \nPago Total: ${_montoPago} \n";

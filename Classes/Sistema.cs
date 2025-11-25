@@ -45,7 +45,7 @@ public class Sistema
         AgregarTipoGasto("Alquiler", "Pago mensual de vivienda.");
         AgregarTipoGasto("Comida", "Super, feria, salidas.");
         AgregarTipoGasto("Transporte", "Boletos de bus, Nafta, Patente.");
-        AgregarTipoGasto("Servicios", "Facturas del hoga.");
+        AgregarTipoGasto("Servicios", "Facturas del hogar.");
         AgregarTipoGasto("Entretenimiento", "Gastos de ocio, salidas, suscripciones.");
         AgregarTipoGasto("Educacion", "Cursos, Facultad, Lenguas.");
 
@@ -71,81 +71,32 @@ public class Sistema
         AgregarUsuario("Federico", "Martinez", "12121212", 1, new DateTime(23, 05, 19),"Empleado"); 
         AgregarUsuario("Camila", "Santos", "13131313", 3, new DateTime(22, 12, 25),"Empleado");
         AgregarUsuario("Marcelo", "Aguirre", "123123123", 1, new DateTime(09, 12, 25),"Gerente");
-        
-        
-        /*
-        AgregarUsuario("Martin", "Gonzalez", "12312312", 1, new DateTime(23, 11, 09),"Empleado");
-        AgregarUsuario("Laura", "Fernandez", "45645612", 1, new DateTime(22, 05, 15),"Empleado");
-        AgregarUsuario("Santiago", "Perez", "78978912", 1, new DateTime(24, 01, 20),"Empleado");
-        AgregarUsuario("Valeria", "Rodriguez", "32132112", 1, new DateTime(21, 07, 03),"Empleado");
-        AgregarUsuario("Diego", "Lopez", "65465412", 1, new DateTime(25, 03, 12),"Empleado");
-        AgregarUsuario("Marcos", "Gonzalez", "11122233", 1, new DateTime(24, 02, 10),"Empleado"); 
-        AgregarUsuario("Martina", "Gonzalez", "22233344", 1, new DateTime(24, 04, 21),"Empleado"); 
-        AgregarUsuario("Mariano", "Gonzalez", "33344455", 1, new DateTime(23, 12, 01),"Empleado"); 
-        AgregarUsuario("Laura", "Ferman", "44455566", 1, new DateTime(23, 09, 30),"Empleado"); 
-        AgregarUsuario("Laura", "Fernandez", "44455567", 1, new DateTime(25, 01, 05),"Empleado"); 
-        AgregarUsuario("Santiago", "Perez", "55566677", 1, new DateTime(22, 11, 11),"Empleado"); 
-        AgregarUsuario("Santiago", "Peres", "55566678", 1, new DateTime(24, 06, 18),"Empleado"); 
-        AgregarUsuario("Valentino", "Rodriguez", "66677788", 1, new DateTime(24, 08, 09),"Empleado"); 
-        AgregarUsuario("Valeria", "Rodriguez", "66677789", 1, new DateTime(23, 03, 27),"Empleado"); 
-        AgregarUsuario("Diego", "Lopez", "77788899", 1, new DateTime(24, 05, 02),"Empleado"); 
-        AgregarUsuario("Diego", "Lopez", "65426412", 1, new DateTime(25, 03, 12),"Empleado"); 
-        AgregarUsuario("Ana", "Gomez", "88899900", 1, new DateTime(23, 07, 14),"Empleado"); 
-        AgregarUsuario("Andres", "Gomez", "99900011", 1, new DateTime(25, 02, 28),"Empleado"); 
-        AgregarUsuario("Florencia", "Martinez", "10101010", 1, new DateTime(24, 10, 07),"Empleado"); 
-        AgregarUsuario("Federico", "Martinez", "12121212", 1, new DateTime(23, 05, 19),"Empleado"); 
-        AgregarUsuario("Camila", "Santos", "13131313", 1, new DateTime(22, 12, 25),"Empleado");
-        AgregarUsuario("Marcelo", "Aguirre", "123123123", 1, new DateTime(09, 12, 25),"Gerente");
-        */
-
 
 
         // ---------------------------
         // 19 Pagos Únicos (solo Debito | Efectivo)
         // --------------------------- 
-        AgregarPagoUnico(MetodoPago.Debito, "Alquiler", "margon@ribuk.com", "Pago Alquiler — Piso A",
-            new DateTime(2025, 11, 07), 20000, 500);
-        AgregarPagoUnico(MetodoPago.Efectivo, "Comida", "laufer@ribuk.com", "Compra supermercado - quincena",
-            new DateTime(2025, 08, 28), 8400, 120);
-        AgregarPagoUnico(MetodoPago.Debito, "Transporte", "sanper@ribuk.com", "Mudanza local",
-            new DateTime(2025, 07, 10), 7200, 300);
-        AgregarPagoUnico(MetodoPago.Efectivo, "Servicios", "valrod@ribuk.com", "Pago agua - factura extra",
-            new DateTime(2025, 09, 22), 1600, 0);
-        AgregarPagoUnico(MetodoPago.Debito, "Entretenimiento", "dielop1@ribuk.com", "Concierto - entrada VIP",
-            new DateTime(2025, 06, 21), 12000, 250);
-        AgregarPagoUnico(MetodoPago.Efectivo, "Comida", "dielop@ribuk.com", "Catering evento",
-            new DateTime(2025, 11, 04), 9800, 400);
-        AgregarPagoUnico(MetodoPago.Debito, "Transporte", "margon1@ribuk.com", "Cuota del auto",
-            new DateTime(2025, 11, 07), 20000, 500);
-        AgregarPagoUnico(MetodoPago.Debito, "Alquiler", "margon1@ribuk.com", "Pago Alquiler — Piso A",
-            new DateTime(2025, 11, 06), 50000, 500);
-        AgregarPagoUnico(MetodoPago.Efectivo, "Comida", "margon2@ribuk.com", "Compra supermercado - emergencia",
-            new DateTime(2025, 03, 12), 5600, 70);
-        AgregarPagoUnico(MetodoPago.Debito, "Transporte", "laufer1@ribuk.com", "Servicio taxi - traslado especial",
-            new DateTime(2025, 04, 18), 2100, 0);
-        AgregarPagoUnico(MetodoPago.Efectivo, "Servicios", "laufer2@ribuk.com", "Reparación eléctrica - urgencia",
-            new DateTime(2025, 02, 27), 4300, 50);
-        AgregarPagoUnico(MetodoPago.Debito, "Entretenimiento", "sanper1@ribuk.com", "Entrada festival música",
-            new DateTime(2025, 09, 05), 5200, 150);
-        AgregarPagoUnico(MetodoPago.Efectivo, "Comida", "valrod1@ribuk.com", "Cena empresarial",
-            new DateTime(2025, 11, 02), 11000, 200);
-        AgregarPagoUnico(MetodoPago.Debito, "Servicios", "dielop@ribuk.com", "Servicio técnico electrodoméstico",
-            new DateTime(2025, 01, 15), 2600, 20);
-        AgregarPagoUnico(MetodoPago.Efectivo, "Entretenimiento", "margon3@ribuk.com", "Clase de pintura - sesión única",
-            new DateTime(2025, 06, 05), 1400, 0);
-        AgregarPagoUnico(MetodoPago.Debito, "Comida", "anagom@ribuk.com", "Almuerzo corporativo especial",
-            new DateTime(2025, 11, 07), 4700, 60);
-        AgregarPagoUnico(MetodoPago.Debito, "Servicios", "anagom@ribuk.com", "Servicio celular",
-            new DateTime(2025, 11, 07), 6000, 70);
-        AgregarPagoUnico(MetodoPago.Efectivo, "Transporte", "andgom@ribuk.com", "Traslado aeropuerto",
-            new DateTime(2025, 05, 30), 3200, 0);
-        AgregarPagoUnico(MetodoPago.Debito, "Alquiler", "valrod2@ribuk.com", "Pago Alquiler — Bodega",
-            new DateTime(2025, 09, 15), 13000, 400);
-        AgregarPagoUnico(MetodoPago.Efectivo, "Servicios", "flomar@ribuk.com", "Pago jardinería - corte anual",
-            new DateTime(2025, 03, 09), 2700, 0);
-        AgregarPagoUnico(MetodoPago.Debito, "Entretenimiento", "fedmar@ribuk.com", "Taller gastronómico - plaza",
-            new DateTime(2025, 04, 11), 2300, 30);
-        /*
+        AgregarPagoUnico(MetodoPago.Debito, "Alquiler", "margon@ribuk.com", "Pago Alquiler — Piso A", new DateTime(2025, 11, 07), 20000, 500);
+        AgregarPagoUnico(MetodoPago.Efectivo, "Comida", "laufer@ribuk.com", "Compra supermercado - quincena", new DateTime(2025, 08, 28), 8400, 120);
+        AgregarPagoUnico(MetodoPago.Debito, "Transporte", "sanper@ribuk.com", "Mudanza local", new DateTime(2025, 07, 10), 7200, 300);
+        AgregarPagoUnico(MetodoPago.Efectivo, "Servicios", "valrod@ribuk.com", "Pago agua - factura extra", new DateTime(2025, 09, 22), 1600, 0);
+        AgregarPagoUnico(MetodoPago.Debito, "Entretenimiento", "dielop1@ribuk.com", "Concierto - entrada VIP", new DateTime(2025, 06, 21), 12000, 250);
+        AgregarPagoUnico(MetodoPago.Efectivo, "Comida", "dielop@ribuk.com", "Catering evento", new DateTime(2025, 11, 04), 9800, 400);
+        AgregarPagoUnico(MetodoPago.Debito, "Transporte", "margon1@ribuk.com", "Cuota del auto", new DateTime(2025, 11, 07), 20000, 500);
+        AgregarPagoUnico(MetodoPago.Debito, "Alquiler", "margon1@ribuk.com", "Pago Alquiler — Piso A", new DateTime(2025, 11, 06), 50000, 500);
+        AgregarPagoUnico(MetodoPago.Efectivo, "Comida", "margon2@ribuk.com", "Compra supermercado - emergencia", new DateTime(2025, 03, 12), 5600, 70);
+        AgregarPagoUnico(MetodoPago.Debito, "Transporte", "laufer1@ribuk.com", "Servicio taxi - traslado especial", new DateTime(2025, 04, 18), 2100, 0);
+        AgregarPagoUnico(MetodoPago.Efectivo, "Servicios", "laufer2@ribuk.com", "Reparación eléctrica - urgencia", new DateTime(2025, 02, 27), 4300, 50);
+        AgregarPagoUnico(MetodoPago.Debito, "Entretenimiento", "sanper1@ribuk.com", "Entrada festival música", new DateTime(2025, 09, 05), 5200, 150);
+        AgregarPagoUnico(MetodoPago.Efectivo, "Comida", "valrod1@ribuk.com", "Cena empresarial", new DateTime(2025, 11, 02), 11000, 200);
+        AgregarPagoUnico(MetodoPago.Debito, "Servicios", "dielop@ribuk.com", "Servicio técnico electrodoméstico", new DateTime(2025, 01, 15), 2600, 20);
+        AgregarPagoUnico(MetodoPago.Efectivo, "Entretenimiento", "margon3@ribuk.com", "Clase de pintura - sesión única", new DateTime(2025, 06, 05), 1400, 0);
+        AgregarPagoUnico(MetodoPago.Debito, "Comida", "anagom@ribuk.com", "Almuerzo corporativo especial", new DateTime(2025, 11, 07), 4700, 60);
+        AgregarPagoUnico(MetodoPago.Debito, "Servicios", "anagom@ribuk.com", "Servicio celular", new DateTime(2025, 11, 07), 6000, 70);
+        AgregarPagoUnico(MetodoPago.Efectivo, "Transporte", "andgom@ribuk.com", "Traslado aeropuerto", new DateTime(2025, 05, 30), 3200, 0);
+        AgregarPagoUnico(MetodoPago.Debito, "Alquiler", "valrod2@ribuk.com", "Pago Alquiler — Bodega", new DateTime(2025, 09, 15), 13000, 400);
+        AgregarPagoUnico(MetodoPago.Efectivo, "Servicios", "flomar@ribuk.com", "Pago jardinería - corte anual", new DateTime(2025, 03, 09), 2700, 0);
+        AgregarPagoUnico(MetodoPago.Debito, "Entretenimiento", "fedmar@ribuk.com", "Taller gastronómico - plaza", new DateTime(2025, 04, 11), 2300, 30);
         AgregarPagoUnico(MetodoPago.Debito, "Alquiler", "margon1@ribuk.com", "Pago alquiler — Piso 1A", new DateTime(2025, 01, 03), 18000, 500);
         AgregarPagoUnico(MetodoPago.Debito, "Comida", "laufer@ribuk.com", "Supermercado — compra semanal", new DateTime(2025, 01, 06), 3200, 0);
         AgregarPagoUnico(MetodoPago.Debito, "Transporte", "sanper@ribuk.com", "Recarga transporte — mes", new DateTime(2025, 01, 08), 900, 0);
@@ -194,7 +145,7 @@ public class Sistema
         AgregarPagoUnico(MetodoPago.Debito, "Servicios", "margon@ribuk.com", "Pago agua extraordinaria — reparación", new DateTime(2025, 08, 08), 900, 0);
         AgregarPagoUnico(MetodoPago.Debito, "Entretenimiento", "laufer2@ribuk.com", "Teatro — entrada única", new DateTime(2025, 08, 10), 1800, 0);
         AgregarPagoUnico(MetodoPago.Debito, "Educacion", "sanper@ribuk.com", "Taller presencial — pago único", new DateTime(2025, 08, 15), 3000, 0);
-        */
+        
 
         // ---------------------------
         // 25 Pagos Recurrentes (todos Credito) — incluyen monto y bool (activo)
@@ -216,7 +167,7 @@ public class Sistema
            35000, new DateTime(2025, 10, 01), new DateTime(2026, 04, 30), true);
 
         AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "dielop@ribuk.com", "Gas domiciliario - plan",
-            2500, new DateTime(2025, 01, 15), null, true);
+            2500, new DateTime(2025, 01, 15), null, false);
 
         AgregarPagoRecurrente(MetodoPago.Credito, "Comida", "margon1@ribuk.com", "Viandas semanales - empleado",
           2500, new DateTime(2025, 04, 01), new DateTime(2025, 10, 01), true);
@@ -225,55 +176,24 @@ public class Sistema
            690, new DateTime(2025, 02, 01), new DateTime(2025, 11, 30), true);
 
         AgregarPagoRecurrente(MetodoPago.Credito, "Entretenimiento", "sanper1@ribuk.com", "Suscripción videojuegos - mensual",
-          690, new DateTime(2025, 06, 01), null, true);
+          690, new DateTime(2025, 06, 01), null, false);
 
-        AgregarPagoRecurrente(MetodoPago.Credito, "Transporte", "valrod1@ribuk.com", "Mantenimiento flota - mensual",
-          15000 , new DateTime(2025, 03, 01), new DateTime(2025, 12, 01), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Alquiler", "dielop@ribuk.com", "Alquiler bodega - contrato 6 meses",
-            60000, new DateTime(2025, 01, 01), new DateTime(2025, 06, 30), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "margon2@ribuk.com", "Mantenimiento web - plan anual",
-            490, new DateTime(2025, 04, 01), new DateTime(2026, 03, 31), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Comida", "dielop1@ribuk.com", "Catering mensual - eventos",
-            12000, new DateTime(2025, 05, 01), new DateTime(2025, 11, 30), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Entretenimiento", "flomar@ribuk.com", "Cineclub - suscripción",
-            990, new DateTime(2025, 02, 01), null, false); 
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "fedmar@ribuk.com", "Backup mensual - empresa",
-            690, new DateTime(2025, 01, 01), new DateTime(2025, 12, 31), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Comida", "camsan@ribuk.com", "Plan viandas - suscripción",
-            4500, new DateTime(2025, 03, 15), new DateTime(2025, 09, 15), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Transporte", "margon3@ribuk.com", "Servicio logística - mensual",
-            4600, new DateTime(2025, 06, 01), new DateTime(2025, 12, 31), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Alquiler", "valrod2@ribuk.com", "Alquiler oficina - plan anual",
-           15000 , new DateTime(2025, 07, 01), new DateTime(2026, 06, 30), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "dielop2@ribuk.com", "Mantenimiento ascensor - contrato",
-           5600, new DateTime(2025, 08, 01), new DateTime(2025, 12, 31), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Entretenimiento", "margon3@ribuk.com", "Suscripción revista digital",
-            690, new DateTime(2025, 09, 01), null, false);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "laufer2@ribuk.com", "Limpieza oficinas - plan mensual",
-            7000, new DateTime(2025, 01, 10), new DateTime(2025, 12, 10), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Comida", "sanper1@ribuk.com", "Desayunos corporativos - suscripción",
-            15000, new DateTime(2025, 02, 01), new DateTime(2025, 07, 31), true);
-
-        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "margon@ribuk.com", "Soporte técnico - plan anual",
-            9980, new DateTime(2025, 03, 01), null, false);
-
+        AgregarPagoRecurrente(MetodoPago.Credito, "Transporte", "valrod1@ribuk.com", "Mantenimiento flota - mensual", 15000 , new DateTime(2025, 03, 01), new DateTime(2025, 12, 01), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Alquiler", "dielop@ribuk.com", "Alquiler bodega - contrato 6 meses", 60000, new DateTime(2025, 01, 01), new DateTime(2025, 06, 30), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "margon2@ribuk.com", "Mantenimiento web - plan anual", 490, new DateTime(2025, 04, 01), new DateTime(2026, 03, 31), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Comida", "dielop1@ribuk.com", "Catering mensual - eventos", 12000, new DateTime(2025, 05, 01), new DateTime(2025, 11, 30), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Entretenimiento", "flomar@ribuk.com", "Cineclub - suscripción", 990, new DateTime(2025, 02, 01), null, false); 
+        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "fedmar@ribuk.com", "Backup mensual - empresa", 690, new DateTime(2025, 01, 01), new DateTime(2025, 12, 31), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Comida", "camsan@ribuk.com", "Plan viandas - suscripción", 4500, new DateTime(2025, 03, 15), new DateTime(2025, 09, 15), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Transporte", "margon3@ribuk.com", "Servicio logística - mensual", 4600, new DateTime(2025, 06, 01), new DateTime(2025, 12, 31), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Alquiler", "valrod2@ribuk.com", "Alquiler oficina - plan anual", 15000 , new DateTime(2025, 07, 01), new DateTime(2026, 06, 30), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "dielop2@ribuk.com", "Mantenimiento ascensor - contrato", 5600, new DateTime(2025, 08, 01), new DateTime(2025, 12, 31), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Entretenimiento", "margon3@ribuk.com", "Suscripción revista digital", 690, new DateTime(2025, 09, 01), null, false);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "laufer2@ribuk.com", "Limpieza oficinas - plan mensual", 7000, new DateTime(2025, 01, 10), new DateTime(2025, 12, 10), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Comida", "sanper1@ribuk.com", "Desayunos corporativos - suscripción", 15000, new DateTime(2025, 02, 01), new DateTime(2025, 07, 31), true);
+        AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "margon@ribuk.com", "Soporte técnico - plan anual", 9980, new DateTime(2025, 03, 01), null, false);
         AgregarPagoRecurrente(MetodoPago.Credito, "Comida", "valrod1@ribuk.com", "Comidas - suscripción premium",10000, new DateTime(2025, 05, 01), new DateTime(2026, 04, 30), true);
-
         AgregarPagoRecurrente(MetodoPago.Credito, "Educacion", "dielop1@ribuk.com", "Plataforma formación - anual",25000, new DateTime(2025, 06, 01), new DateTime(2026, 05, 31), true);
-        
-        
         AgregarPagoRecurrente(MetodoPago.Credito, "Servicios", "margon2@ribuk.com", "Internet hogar básico", 1200, new DateTime(2025, 01, 01), new DateTime(2025, 12, 31), true);
         AgregarPagoRecurrente(MetodoPago.Credito, "Alquiler", "laufer1@ribuk.com", "Alquiler mensual departamento B2", 20000, new DateTime(2025, 01, 01), new DateTime(2025, 12, 31), true);
         AgregarPagoRecurrente(MetodoPago.Credito, "Comida", "sanper@ribuk.com", "Plan de viandas semanal", 2200, new DateTime(2025, 01, 03), new DateTime(2025, 12, 31), true);
@@ -369,7 +289,9 @@ public class Sistema
 
     public void AgregarTipoGasto(string nombre, string descripcion)
     {
+        if(string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(descripcion)) throw new Exception("Nombre y Descripcion no pueden ser vacios.");
         TipoGasto nuevoTipoGasto = new TipoGasto(nombre, descripcion);
+        if (_tiposDeGastos.Contains(nuevoTipoGasto)) throw new Exception("Ya existe un gasto con este nombre.");
         _tiposDeGastos.Add(nuevoTipoGasto);
     }
 
@@ -400,7 +322,7 @@ public class Sistema
     public void AgregarPagoRecurrente(MetodoPago metodoPago, string tipoGasto, string email, string descr, decimal montoPago, DateTime fechaDesde, DateTime? fechaHasta, bool limite)
     {
         PagoRecurrente pago = new PagoRecurrente(metodoPago, ObtenerTipoGasto(tipoGasto), ObtenerUsuario(email), descr, montoPago ,fechaDesde, fechaHasta, limite);
-        //pago.ValidarPago();
+        pago.ValidarPago();
         _pagos.Add(pago);
     }
 
@@ -413,10 +335,23 @@ public class Sistema
         {
             if(user == pago.Usuario)
             {
-                aux.Add(pago);
+                if(pago is PagoUnico pu && pu.FechaPago.Year == DateTime.Today.Year && pu.FechaPago.Month == DateTime.Today.Month)
+                {
+                    aux.Add(pago);
+                }
+                else if (pago is PagoRecurrente pr)
+                {
+                    if(!pr.Limite && pr.FechaDesde.Year <= DateTime.Today.Year)
+                    {
+                        aux.Add(pago);
+                    }
+                    else if (pr.FechaDesde.Year <= DateTime.Today.Year && pr.FechaHasta.Value.Month >= DateTime.Today.Month)
+                    {
+                        aux.Add(pago);
+                    }
+                }
             }
         }
-
         aux.Sort();
         return aux;
     }
@@ -512,6 +447,7 @@ public class Sistema
         {
             if(user.PerteneceAlEquipo(idEquipo)) aux.Add(user);
         }
+        
         return aux;
     }
  
